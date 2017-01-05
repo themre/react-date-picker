@@ -598,7 +598,7 @@ export default class DateField extends Component {
       return false
     }
 
-    if (historyVisible && (key == 'Escape' || key == 'Enter')) {
+    if (historyVisible && (key == 'Escape' || key == 'Enter' || key == 'Tab')) {
       this.onViewKeyDown(event)
       return false
     }
@@ -808,6 +808,7 @@ export default class DateField extends Component {
 
   onPickerChange(dateString, { dateMoment, forceUpdate }, event) {
     const isEnter = event && event.key == 'Enter'
+    const isTab = event && event.key == 'Tab'
     const updateOnDateClick = forceUpdate ? true : this.props.updateOnDateClick || isEnter
 
     if (updateOnDateClick) {
@@ -815,7 +816,7 @@ export default class DateField extends Component {
 
       this.setDate(dateString, { dateMoment })
 
-      if (this.props.collapseOnDateClick || isEnter) {
+      if (this.props.collapseOnDateClick || isEnter || isTab) {
         this.setExpanded(false)
       }
     }
