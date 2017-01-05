@@ -592,7 +592,7 @@ export default class DateField extends Component {
     const expanded = this.isExpanded()
     const historyVisible = this.isHistoryViewVisible()
 
-    if (key == 'Enter' && !historyVisible) {
+    if ((key == 'Enter' || key == 'Tab') && !historyVisible) {
       this.onViewKeyDown(event)
       this.toggleExpand()
       return false
@@ -807,7 +807,8 @@ export default class DateField extends Component {
   }
 
   onPickerChange(dateString, { dateMoment, forceUpdate }, event) {
-    const isEnter = event && event.key == 'Enter'
+    const key = event.key
+    const isEnter = event && (key == 'Enter' || key == 'Tab')
     const isTab = event && event.key == 'Tab'
     const updateOnDateClick = forceUpdate ? true : this.props.updateOnDateClick || isEnter
 

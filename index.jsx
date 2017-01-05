@@ -120,14 +120,14 @@ var App = React.createClass({
         <br />
         */}
         {/*<TimeInput format="hh:mm:ss A" xonChange={this.onTimeChange} defaultValue={this.state.time}/>*/}
-        {/*<DateField
+        <DateField
             defaultValue={"2016-05-30"}
             dateFormat="YYYY-MM-DD"
           />
 
         <br />
         <TimePicker timeFormat="HH:mm:ss" defaultTime style={{minHeight: 200, minWidth: 200}}/>
-        <br />*/}
+        <br />
         <HistoryView maxDate={Date.now()} />
             <MonthView
 

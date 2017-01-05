@@ -9,7 +9,7 @@ export default function(event) {
     }
   }
 
-  if (key == 'Enter' && this.p.activeDate) {
+  if ((key == 'Enter' || key == 'Tab') && this.p.activeDate) {
     this.confirm(this.p.activeDate, event)
   }
 

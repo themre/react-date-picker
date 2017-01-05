@@ -526,6 +526,7 @@ export default class DecadeView extends Component {
   }
 
   onKeyDown(event) {
+    console.log(event.target.value)
     return ON_KEY_DOWN.call(this, event)
   }
 
