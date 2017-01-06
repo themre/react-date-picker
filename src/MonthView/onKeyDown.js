@@ -2,14 +2,13 @@ import NAV_KEYS from './navKeys'
 
 export default function(event) {
   const key = event.key
-
   if (this.props.onKeyDown) {
     if (this.props.onKeyDown(event) === false) {
       return
     }
   }
 
-  if ((key == 'Enter' || key == 'Tab') && this.p.activeDate) {
+  if (this.p.activeDate) {
     this.confirm(this.p.activeDate, event)
   }
 
