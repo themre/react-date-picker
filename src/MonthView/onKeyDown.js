@@ -8,7 +8,7 @@ export default function(event) {
     }
   }
 
-  if (this.p.activeDate) {
+  if ((key == 'Enter' || key == 'Tab') && this.p.activeDate) {
     this.confirm(this.p.activeDate, event)
   }
 
