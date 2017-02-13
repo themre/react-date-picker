@@ -773,6 +773,7 @@ export default class MonthView extends Component {
           theme,
           secondary: true,
           date: props.moment,
+          onNavClick: props.onNavClick,
           viewMoment: props.viewMoment,
           onViewDateChange: this.onNavViewDateChange,
           onMouseDown: this.onNavMouseDown,
@@ -1175,6 +1176,7 @@ MonthView.defaultProps = {
 
   onBlur: () => {},
   onFocus: () => {},
+  onNavClick: () => {},
 
   footerClearDate: null,
 
@@ -1205,6 +1207,7 @@ MonthView.defaultProps = {
 MonthView.propTypes = {
   navOnDateClick: PropTypes.bool,
   isDisabledDay: PropTypes.func,
+  onNavClick: PropTypes.func,
 
   onChange: PropTypes.func,
   onViewDateChange: PropTypes.func,
